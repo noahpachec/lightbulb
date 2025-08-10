@@ -4,6 +4,11 @@
     padding: 0;
     --bulb-light: #ffde13;
     --bulb-screw: #5B4E49;
+    --coil-color: #ffea65;
+    --outline: #fff4ab;
+    --line-color: #3d3431;
+    --glare: #fdf7ce;
+    --glow: #ffde13;
 
 }
 
@@ -17,13 +22,15 @@ body {
 }
 
 .light {
-    height: 30vh;
-    width: 20vw;
-    border: solid white;
+    height: 200px;
+    width: 200px;
+    /* border: solid white; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    
 }
 
 .mainbulb {
@@ -31,29 +38,142 @@ body {
     width: 50%;
     height: 50%;
     border-radius: 100px 100px 100px 100px;
-}
+    display: flex;
+    justify-content: center;
+    
 
+}
+.glow {
+    position: absolute;
+    transform: translate(0%, 100%);
+    box-shadow: 0px 0px 40px 30px var(--bulb-light);
+    width: 40px;
+    height: 30px;
+    border-radius: 100%;
+    z-index: -3;
+    
+}
+.glare {
+    position: absolute;
+    height: 60px;
+    width: 30px;
+    background-color: var(--glare);
+    z-index: 1;
+    border-radius: 100%;
+    opacity: 30%;
+    transform: translate(70%, -5%) rotate(-45deg);
+    
+
+
+
+}
 .underbulb {
     width: 29%;
     height: 16%;
     background-color: var(--bulb-light);
     border-radius: 0px 0px 100px 100px;
     margin-top: -15px;
+    z-index: -1;
+    
 }
+.coils {
+    /* border: solid white; */
+    height: 100%;
+    width: 50%;
+    
+}
+
+.coil-1 {
+    margin-top: 30%;
+    width: 100%;
+    height: 8%;
+    background-color: var(--coil-color);
+    border-radius: 10px;
+    transform: rotate(10deg);
+}
+.coil-2 {
+    margin-top: 10%;
+    width: 100%;
+    height: 8%;
+    background-color: var(--coil-color);
+    border-radius: 10px;
+    transform: rotate(10deg);
+}
+.coil-3 {
+    margin-top: 10%;
+    width: 100%;
+    height: 8%;
+    background-color: var(--coil-color);
+    border-radius: 10px;
+    transform: rotate(10deg);
+}
+
+.bottom-coils {
+    /* border: solid white; */
+    margin-top: 10%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.b-coil-1 {
+    width: calc(8%*2);
+    height: 100%;
+    background: linear-gradient(var(--coil-color) 38%, var(--bulb-light) 100%);
+    border-radius: 10px;
+    margin-right: 10%;
+    
+}
+.b-coil-2 {
+    width: calc(8%*2);
+    height: 100%;
+    background: linear-gradient(var(--coil-color) 38%, var(--bulb-light) 100%);
+    border-radius: 10px;
+    
+}
+
+
+
 
 .bulbscrew {
     background-color: var(--bulb-screw);
-    width: 20%;
+    width: 22%;
     height: 15%;
     margin-top: -10px;
     border-radius: 0px 0px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
+
+.screw-lines {
+    /* border: solid white; */
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.line-1 {
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--bulb-screw) 0%, var(--line-color) 20%, var(--line-color) 80%, var(--bulb-screw) 100%);
+    margin-top: 10%;
+}
+.line-2 {
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--bulb-screw) 0%, var(--line-color) 20%, var(--line-color) 80%, var(--bulb-screw) 100%);
+    margin-top: 5%;
+}
+
 
 .bottom-triangle {
     
-    width: 0;
-    height: 0;
-    border-left: 2.5% solid transparent;
-    border-right: 2.5% solid transparent;
-    border-top: 5% solid var(--bulb-light);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 5px solid var(--line-color);
 }
