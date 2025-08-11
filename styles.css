@@ -208,6 +208,7 @@ body {
 }
 
 .arrow {
+    animation: note 5s ease-in-out infinite;
     position: absolute;
     filter: invert();
     opacity: .6;
